@@ -13,6 +13,13 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
+
+Route::group(['namespace' => 'acomodation'], function(){
+    Route::view('/detail', 'acomodation.acomodation-detail')->name('detail.acomodation');
+    Route::view('/reserve', 'acomodation.reserve')->name('reserve.acomodation');
+});
+
+
 /**
  * Register the typical authentication routes for an application.
  * Replacing: Auth::routes();
@@ -44,6 +51,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::post('/register/pet', 'Dashboard\IndexController@registerPet')->name('register.pet');
     /**
      * Dashboard. Common access.
      * // Matches The "/dashboard/*" URLs

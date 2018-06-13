@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('page-title') @hasSection('page-subtitle') | @yield('page-subtitle') @endif</title>
+        <title>FindPet</title>
 
         <!-- Bootstrap 3.3.7 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -71,13 +71,7 @@
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        @yield('page-title')
-                        <small>@yield('page-subtitle')</small>
-                    </h1>
-                    @yield('breadcrumbs')
-                </section>
+
 
                 <!-- Main content -->
                 <section class="content">
@@ -92,10 +86,10 @@
             <!-- /.content-wrapper -->
 
             <footer class="main-footer">
-                <div class="pull-right hidden-xs">
+                <!-- <div class="pull-right hidden-xs">
                     <b>Version</b> {{ config('adminlte.version') }}
                 </div>
-                <strong>Copyright &copy; {{ date('Y') }}. {!! config('adminlte.credits') !!}</strong>. All rights reserved.
+                <strong>Copyright &copy; {{ date('Y') }}. {!! config('adminlte.credits') !!}</strong>. All rights reserved. -->
             </footer>
         </div>
         <!-- ./wrapper -->

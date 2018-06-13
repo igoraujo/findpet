@@ -3,9 +3,9 @@
     <!-- Logo -->
     <a href="{{ route('dashboard::index') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini">{!! config('adminlte.logo_mini') !!}</span>
+        <span class="logo-mini">Pet</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">{!! config('adminlte.logo_lg') !!}</span>
+        <span class="logo-lg">FindPet</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">

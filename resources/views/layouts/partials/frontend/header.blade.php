@@ -3,7 +3,7 @@
     <nav class="navbar navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="/" class="navbar-brand">{!! config('adminlte.logo_lg') !!}</a>
+                <a href="/" class="navbar-brand">FindPet</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                   <i class="fa fa-bars"></i>
                 </button>
@@ -11,9 +11,9 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li><a href="/">Link</a></li>
-                </ul>
+                </ul> -->
             </div>
             <!-- /.navbar-collapse -->
         
@@ -22,10 +22,10 @@
                 <ul class="nav navbar-nav">
                     @guest
                         @if (Route::has('login'))
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('login') }}">Entrar</a></li>
                         @endif
                         @if (Route::has('register'))
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('register') }}">Cadastrar</a></li>
                         @endif
                     @else
                         @if (Route::has('dashboard::index'))

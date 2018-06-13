@@ -3,7 +3,7 @@
     <li class="header">MAIN NAVIGATION</li>
     <li class="{{ \App\Utils::checkRoute(['dashboard::index', 'admin::index']) ? 'active': '' }}">
         <a href="{{ route('dashboard::index') }}">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span>Meus Pets</span>
         </a>
     </li>
     @if (Auth::user()->can('viewList', \App\User::class))
