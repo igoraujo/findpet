@@ -13,12 +13,7 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
-
-Route::group(['namespace' => 'acomodation'], function(){
-    Route::view('/detail', 'acomodation.acomodation-detail')->name('detail.acomodation');
-    Route::view('/reserve', 'acomodation.reserve')->name('reserve.acomodation');
-});
-
+Route::get('acomodation/detail/{id}', 'Acomodation\DetailController@detail')->name('detail.acomodation');
 
 /**
  * Register the typical authentication routes for an application.
@@ -52,6 +47,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/register/pet', 'Dashboard\IndexController@registerPet')->name('register.pet');
+
+    Route::get('/acomodation/reserve/{id}', 'Acomodation\AcomodationController@reserveIndex')->name('reserve.acomodation');
+
+    Route::get('/acomodation/reserve/{hotel_id}/confirmation/{pet_id}', 'Acomodation\AcomodationController@reserveConfirmation')->name('reserve.confirmation');
+
+    Route::get('/user/reserve', 'Dashboard\IndexController@reserve')->name('user.reserve');
+
     /**
      * Dashboard. Common access.
      * // Matches The "/dashboard/*" URLs
@@ -92,5 +94,9 @@ Route::group(['middleware' => 'auth'], function () {
             Route::resource('users', 'UsersController');
         });
     });
+
+    Route::get('/acomodation', 'Acomodation\AcomodationController@index')->name('index.comodation');
+    Route::get('/acomodation/register', 'Acomodation\AcomodationController@indexRegister')->name('index.register.comodation');
+    Route::post('/acomodation/register/action', 'Acomodation\AcomodationController@register')->name('register.acomodation');
 
 });

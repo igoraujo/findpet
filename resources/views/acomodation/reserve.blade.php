@@ -13,54 +13,21 @@
 
 @section('content')
 <div class="col-md-12">
-	<h2 class="text-center">Confirme sua reserva para Hotelaria HotDog</h1>
-	<div class="col-md-6">
-	  <div class="form-group">
-	    <label for="name">Nome *</label>
-	    <input type="text" class="form-control" name="name" placeholder="Nome">
-	  </div>
-	  <!-- /.form-group -->
+	<h2 class="text-center">Confirme sua reserva para {{$accommodation->nome}}</h1>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="{{$accommodation->foto}}" class="img-responsive">
+		</div>
+		<div class="col-md-6">
+			@if(empty($pets))
+				<h4>Você não possui Pets dentro das especificações do hotel</h4>
+			@else
+				<h4>Selecione o seu Pet</h4>
+				@foreach($pets as $pet)
+					<a class="btn btn-success" href="{{route('reserve.confirmation', ['hotel_id' => $accommodation->id, 'pet_id' => $pet->id])}}">{{$pet->name_pet}}</a>
+				@endforeach
+			@endif
+		</div>	
 	</div>
-	<!-- /.col-md-12 -->
-
-	<div class="col-md-6">
-	  <div class="form-group ">
-	    <label for="cpf">CPF/CNPJ *</label>
-	    <input type="number" class="form-control" name="cpf" placeholder="000.000.000-00">
-	  </div>
-	  <!-- /.form-group -->
-	</div>
-	<!-- /.col-md-12 -->
-
-	<div class="col-md-12">
-	<div class="form-group">
-	<label for="address">Endereço *</label>
-	<input type="text" class="form-control" name="address" placeholder="Endereço">
-	</div>
-	<!-- /.form-group -->
-	</div>
-	<!-- /.col-md-12 -->
-
-	<div class="col-md-6">
-	<div class="form-group">
-	<label for="breed">Raça do pet *</label>
-	<input type="text" class="form-control" name="breed" placeholder="Dalmata">
-	</div>
-	<!-- /.form-group -->
-	</div>
-	<!-- /.col-md-12 -->
-
-	<div class="col-md-6">
-	<div class="form-group">
-	<label for="raca">Vacinado *</label>
-	<div class="radio">
-	  <label><input type="radio" name="radio-yes" value="y">Sim</label>
-	  <label><input type="radio" name="radio-no" value="n">Não</label>
-	</div>
-
-	</div>
-	<!-- /.form-group -->
-	</div>
-	<!-- /.col-md-12 -->
 </div>
 @endsection

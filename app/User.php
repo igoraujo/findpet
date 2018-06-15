@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'is_admin', 'logo_number'
+        'name', 'email', 'password', 'is_admin', 'is_cnpj', 'logo_number'
     ];
 
     /**
@@ -37,6 +37,11 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return (int) $this->is_admin === 1;
+    }
+
+    public function isCnpj()
+    {
+        return (int) $this->is_cnpj === 1;
     }
 
     /**

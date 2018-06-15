@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+#models
+use App\Cnpj as HotelModel;
+
 class WelcomeController extends Controller
 {
     /**
@@ -13,6 +16,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+    	$accommodations = Hotelmodel::paginate('6');
+        return view('welcome', ['accommodations' => $accommodations]);
     }
 }

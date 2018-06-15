@@ -15,6 +15,7 @@ class AddIsAdminAndLogoNumberToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_admin')->default(0);
+            $table->boolean('is_cnpj')->default(0);
             $table->tinyInteger('logo_number')->default(1);
         });
     }
